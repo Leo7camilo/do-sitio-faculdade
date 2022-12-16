@@ -1,0 +1,67 @@
+<nb-card>
+
+  <nb-card-header style="text-align: center;"> Cadastro de Produto</nb-card-header>
+
+  <nb-card-body>
+
+    <form #f="ngForm" autocomplete="off" >
+      <div class="row">
+        <div class="col-lg-6">
+          <nb-card>
+            <nb-card-header>Dados Necessários</nb-card-header>
+            <nb-card-body>
+              <input type="text" nbInput [(ngModel)]="mercadoria.descricao" fullWidth placeholder="Descrição"
+                #descricao="ngModel" id="descricao" name="descricao" required>
+
+              <div class="full-name-inputs">
+                <input type="number" nbInput [(ngModel)]="mercadoria.valor" fullWidth placeholder="Valor por Unidade"
+                  #valor="ngModel" id="valor" name="valor" required>
+                <input type="date" nbInput [(ngModel)]="mercadoria.dataProducao" fullWidth
+                  placeholder="Data de Produção" #dataProducao="ngModel" id="dataProducao" name="dataProducao" required>
+
+              </div>
+              <textarea rows="5" nbInput [(ngModel)]="mercadoria.observacao" fullWidth shape="round"
+                placeholder="Observação" #observacao="ngModel" id="observacao" name="observacao" required>
+              </textarea>
+            </nb-card-body>
+          </nb-card>
+        </div>
+
+        <div class="col-lg-6">
+
+          <nb-card>
+            <nb-card-header>Produtor</nb-card-header>
+            <nb-card-body>
+              <nb-select name="produtor" id="produtor" *ngFor="let produtor of produtores"
+                [(ngModel)]="mercadoria.produtor.codigo" placeholder="Selecione" #produtor="ngModel" fullWidth required>
+                <nb-option [value]="produtor" >
+                  {{ produtor.nome }}
+                </nb-option>
+              </nb-select>
+            </nb-card-body>
+          </nb-card>
+
+          <nb-card>
+            <nb-card-header>Categoria</nb-card-header>
+            <nb-card-body>
+              <nb-select name="categoria" id="categoria" *ngFor="let categoria of categorias"
+                [(ngModel)]="mercadoria.categoria.codigo" placeholder="Selecione" #categoria="ngModel" fullWidth required>
+                <nb-option [value]="categoria" >
+                  {{ categoria.nome }}
+                </nb-option>
+              </nb-select>
+            </nb-card-body>
+          </nb-card>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+
+  <nb-card-footer>
+    <div class="full-name-inputs">
+      <button nbButton hero status="primary" (click)="dismiss()">Sair</button>
+      <button nbButton hero status="success" [disabled]="f.invalid" (click)="salvar(f)" >Criar</button>
+    </div>
+  </nb-card-footer>
+
+</nb-card>

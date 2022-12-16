@@ -1,0 +1,79 @@
+<nb-card>
+  <nb-card-header>{{ mercadoria.data.descricao }}</nb-card-header>
+  <nb-card-body>
+
+    <nb-stepper orientation="horizontal" class="col-md-8">
+      <nb-step label="Produção" class=".col-md-8">
+        <label>Data De Produção:</label>
+        <nb-flip-card>
+          <nb-card-front>
+            <nb-card>
+              <nb-card-body>
+                {{mercadoria.data.dataProducao}}
+              </nb-card-body>
+            </nb-card>
+          </nb-card-front>
+          <nb-card-back>
+            <nb-card>
+              <nb-card-body>
+                {{mercadoria.data.dataProducao}}
+              </nb-card-body>
+            </nb-card>
+          </nb-card-back>
+        </nb-flip-card>
+      </nb-step>
+
+      <nb-step label="Categoria Do Produto" class=".col-md-8">
+          <label>Categoria:</label>
+              <nb-flip-card>
+                <nb-card-front>
+                  <nb-card>
+                    <nb-card-body>
+                      {{mercadoria.data.categoria.nome}}
+                    </nb-card-body>
+                  </nb-card>
+                </nb-card-front>
+                <nb-card-back>
+                  <nb-card>
+                    <nb-card-body>
+                      {{mercadoria.data.categoria.nome}}
+                    </nb-card-body>
+                  </nb-card>
+                </nb-card-back>
+              </nb-flip-card>
+      </nb-step>
+
+      <nb-step label="Observações" class=".col-md-8">
+        <label>Observações sobre o produto:</label>
+        <nb-card>
+          <nb-card-body>
+            {{mercadoria.data.observacao}}
+          </nb-card-body>
+        </nb-card>
+      </nb-step>
+
+      <nb-step label="Produtor" class=".col-md-8">
+        <label>Nome do Produtor:</label>
+        <nb-card>
+          <nb-card-body>
+            {{mercadoria.data.produtor.nome}}
+          </nb-card-body>
+        </nb-card>
+
+        <label>Descrição:</label>
+        <nb-card>
+          <nb-card-body>
+            {{mercadoria.data.produtor.descricao}}
+          </nb-card-body>
+        </nb-card>
+      </nb-step>
+
+    </nb-stepper>
+  </nb-card-body>
+
+  <p>descricao": "Chico Bento é o caipira mais curioso e teimoso das belas terras de Vila Abobrinha, cidadezinha do interior. Seu amor pela doce e simples vida da roça</p>
+
+  <nb-card-footer>
+    <button nbButton hero status="primary" (click)="dismiss()">Sair</button>
+  </nb-card-footer>
+</nb-card>

@@ -1,0 +1,22 @@
+<nb-card>
+  <nb-card-header>Cadastro de Produtos</nb-card-header>
+  <nb-card-body>
+    <div class="buttons-row">
+      <button nbButton status="primary" (click)="onCadastrarMercadoria()">
+        Novo Produto
+      </button>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>
+    Produtos
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"
+                    (userRowSelect)="onUserRowSelect($event)"
+    >
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

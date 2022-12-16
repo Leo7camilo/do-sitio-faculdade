@@ -1,0 +1,53 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card {
+    max-width: 900px;
+    max-height: 900px;
+  }
+}
+
+nb-card {
+  border: #FFF;
+}
+
+
+.formulario-item,
+.formulario-sub-item{
+    margin: 10px;
+}
+
+.formulario-item {
+    display: inline-block;
+}
+
+.formulario-item label{
+  color: #2096a3;
+  font-weight: bold;
+  display: block;
+}
+
+
+.formulario-item-rigth,
+.formulario-sub-item{
+    margin: 10px;
+}
+
+.formulario-item-rigth {
+    display: inline-block;
+}
+.formulario-item-rigth {
+    margin: 2px;
+}
+
+.formulario-item-rigth label{
+    color: #e91e63;
+    font-weight: bold;
+    display: block;
+}
+
+.formulario-sub-item label{
+    color: #424242;
+    font-weight: bold;
+    display: block;
+}
