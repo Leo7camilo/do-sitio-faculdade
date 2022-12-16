@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    database: MYSQL
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost/projetofinal?createDatabaseIfNotExist=true&useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+      
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true  
+      
+  application:
+    name: projeto-final
+    
+  devtools:
+    restart:
+      log-condition-evaluation-delta: false    
+    
+api:
+  version: v1
